@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1A1412">
+<title>Fátima Guerra | Ouzari Viagens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg-page:#1A1412;--bg-card:#2B211E;--bg-button:#3A2E2A;--border-gold:#C5A059;--border-gold-subtle:rgba(197,160,89,.25);--text-gold:#E8D5B5;--text-sand:#D8C7B8;--text-muted:#A39387;--circle-bg:#4A3C37;--shadow-soft:0 12px 30px rgba(0,0,0,.4)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{background-color:var(--bg-page);background-image:radial-gradient(circle at 10% 20%,rgba(58,46,42,.6) 0%,transparent 50%),radial-gradient(circle at 90% 80%,rgba(43,33,30,.8) 0%,transparent 50%);color:var(--text-sand);display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:20px 10px}
+#preloader{position:fixed;inset:0;background:#15100E;z-index:9999;display:flex;justify-content:center;align-items:center;transition:opacity .5s ease,visibility .5s ease}
+#preloader.fade-out{opacity:0;visibility:hidden;pointer-events:none}
+.compass-loader{font-size:68px;color:var(--border-gold);filter:drop-shadow(0 0 10px rgba(197,160,89,.35));animation:spinCompass 2.5s linear infinite,fillPulse 1s ease-in-out infinite alternate}
+@keyframes spinCompass{to{transform:rotate(360deg)}}@keyframes fillPulse{from{opacity:.55}to{opacity:1}}
+.biolink-container{width:100%;max-width:440px;background:rgba(31,24,22,.95);border:1px solid var(--border-gold-subtle);border-radius:36px;box-shadow:var(--shadow-soft);overflow:hidden;position:relative;backdrop-filter:blur(10px)}
+.header-cover{width:100%;height:380px;position:relative;overflow:hidden;background:linear-gradient(135deg,#47352d,#201715)}
+.header-cover img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.header-cover::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:linear-gradient(to top,rgba(31,24,22,1),transparent)}
+.profile-section{padding:0 24px;margin-top:-30px;position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center}
+.brand-badge{background:rgba(43,33,30,.85);border:1px solid var(--border-gold-subtle);padding:6px 18px;border-radius:20px;font-size:11px;font-weight:500;color:var(--text-gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:inline-flex;align-items:center;gap:8px}
+.profile-name{font-family:'Playfair Display',serif;font-size:30px;font-weight:600;color:var(--text-gold);margin-bottom:4px;letter-spacing:.5px}
+.profile-subtitle{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--text-sand);font-style:italic;margin-bottom:24px}
+.mission-card{background:var(--bg-card);border:1px solid var(--border-gold-subtle);padding:22px;border-radius:24px;margin:0 24px 28px;text-align:center;box-shadow:inset 0 0 20px rgba(0,0,0,.2)}
+.mission-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--text-gold);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:10px}
+.mission-text{font-size:13px;color:var(--text-sand);line-height:1.7;font-weight:300}
+.links-container{padding:0 20px;display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.custom-button{background:linear-gradient(145deg,#382C28,#2A201D);border:1px solid rgba(197,160,89,.35);border-radius:35px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;color:#fff;transition:all .2s ease;box-shadow:0 4px 15px rgba(0,0,0,.3);cursor:pointer}
+.custom-button:hover,.custom-button:focus-visible{border-color:var(--border-gold);transform:translateY(-2px);box-shadow:0 8px 22px rgba(197,160,89,.15);outline:none}
+.btn-left{display:flex;align-items:center;gap:14px;min-width:0}
+.btn-icon-circle{width:44px;height:44px;border-radius:50%;background:var(--circle-bg);border:1px solid var(--border-gold-subtle);display:flex;align-items:center;justify-content:center;color:var(--text-gold);font-size:16px;flex-shrink:0;transition:all .2s}
+.btn-text-content{display:flex;flex-direction:column;text-align:left;min-width:0}
+.btn-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#F5EBE1;line-height:1.2;transition:color .2s}
+.btn-sub{font-size:11px;color:var(--text-muted);margin-top:3px;font-weight:300;line-height:1.4}
+.btn-arrow-circle{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--text-sand);font-size:11px;flex-shrink:0;transition:all .2s}
+.custom-button.highlight{background:linear-gradient(145deg,#4A3A34,#332723);border-color:var(--border-gold)}
+.custom-button.highlight .btn-arrow-circle{background:#F5EBE1;color:#2A201D}
+.section-header{padding:0 24px;font-family:'Playfair Display',serif;font-size:20px;color:var(--text-gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;scroll-margin-top:16px}
+.section-header::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--border-gold-subtle),transparent)}
+.catalog-grid{padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+.catalog-card{background:var(--bg-card);border:1px solid var(--border-gold-subtle);border-radius:20px;overflow:hidden;text-decoration:none;transition:transform .2s,border-color .2s;color:inherit;display:block}
+.catalog-card:hover,.catalog-card:focus-visible{transform:translateY(-3px);border-color:var(--border-gold);outline:none}
+.catalog-img{width:100%;height:110px;object-fit:cover;filter:brightness(.9);display:block;background:#45342c}
+.catalog-body{padding:12px;text-align:left}
+.catalog-category{font-size:9px;color:var(--border-gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;display:block}
+.catalog-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--text-sand);line-height:1.2;margin-bottom:5px}
+.catalog-desc{font-size:10px;color:var(--text-muted);line-height:1.5}
+.faq-list{padding:0 20px;margin-bottom:32px;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--bg-card);border:1px solid var(--border-gold-subtle);border-radius:18px;overflow:hidden}
+.faq-question{width:100%;border:0;background:transparent;text-align:left;padding:14px 18px;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--text-sand);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-answer{padding:0 18px 14px;font-size:12px;color:var(--text-muted);line-height:1.7;display:none;font-weight:300}
+.faq-item.active{border-color:var(--border-gold)}.faq-item.active .faq-answer{display:block}.faq-item.active .faq-icon{transform:rotate(180deg);color:var(--border-gold)}
+.faq-icon{font-size:11px;transition:transform .3s;flex-shrink:0}
+.final-cta-card{margin:0 20px 32px;background:var(--bg-card);border-radius:28px;overflow:hidden;border:1px solid var(--border-gold-subtle);text-align:center;box-shadow:var(--shadow-soft)}
+.final-photo-wrapper{width:100%;height:260px;position:relative;overflow:hidden;background:linear-gradient(135deg,#47352d,#201715)}
+.final-photo-wrapper img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.95)}
+.final-cta-content{padding:22px 18px}
+.final-cta-title{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:var(--text-gold);margin-bottom:16px;line-height:1.4}
+.btn-gold-action{background:linear-gradient(145deg,#382C28,#2A201D);border:1px solid var(--border-gold)}
+.btn-gold-action:hover,.btn-gold-action:focus-visible{background:linear-gradient(145deg,#C5A059,#9E7D3B);border-color:#E8D5B5;transform:translateY(-2px);box-shadow:0 10px 25px rgba(197,160,89,.4)}
+.btn-gold-action:hover .btn-title,.btn-gold-action:focus-visible .btn-title{color:#1A1412;font-weight:700}
+.btn-gold-action:hover .btn-sub,.btn-gold-action:focus-visible .btn-sub{color:#2A201D}
+.btn-gold-action:hover .btn-icon-circle,.btn-gold-action:focus-visible .btn-icon-circle{background:#1A1412;color:var(--border-gold);border-color:transparent}
+.btn-gold-action:hover .btn-arrow-circle,.btn-gold-action:focus-visible .btn-arrow-circle{background:#1A1412;color:#fff}
+.footer{text-align:center;font-size:10px;color:var(--text-muted);padding:20px;background:rgba(20,15,14,.8);border-top:1px solid var(--border-gold-subtle);letter-spacing:1px;text-transform:uppercase;line-height:1.7}
+@media(max-width:360px){body{padding:8px 5px}.biolink-container{border-radius:27px}.header-cover{height:330px}.profile-name{font-size:27px}.mission-card{margin-left:16px;margin-right:16px;padding:18px}.links-container,.catalog-grid,.faq-list{padding-left:14px;padding-right:14px}.btn-left{gap:10px}.btn-title{font-size:17px}.btn-sub{font-size:10px}.catalog-grid{gap:9px}.catalog-body{padding:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="preloader" aria-label="Carregando apresentação"><i class="fa-solid fa-compass compass-loader" aria-hidden="true"></i></div>
+<main class="biolink-container">
+  <div class="header-cover"><img src="DSC_0380.jpg" alt="Fátima Guerra — Ouzari Viagens" onerror="this.style.display='none'"></div>
+  <section class="profile-section" aria-label="Apresentação">
+    <div class="brand-badge"><i class="fa-solid fa-compass" aria-hidden="true"></i> Ouzari Viagens</div>
+    <h1 class="profile-name">Fátima Guerra</h1>
+    <p class="profile-subtitle">Curadoria &amp; Consultoria de Viagens sob Medida</p>
+  </section>
+  <section class="mission-card">
+    <h2 class="mission-title"><i class="fa-solid fa-feather-pointed" style="color:var(--border-gold);font-size:16px" aria-hidden="true"></i> Minha Missão</h2>
+    <p class="mission-text">Compreender a essência do seu desejo e transformá-lo em uma jornada inesquecível. Crio roteiros sob medida com sofisticação, afeto e suporte exclusivo do primeiro contato ao seu retorno.</p>
+  </section>
+  <nav class="links-container" aria-label="Links principais">
+    <a href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20F%C3%A1tima!%20Gostaria%20de%20agendar%20uma%20consultoria." class="custom-button highlight" target="_blank" rel="noopener noreferrer">
+      <span class="btn-left"><span class="btn-icon-circle"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span><span class="btn-text-content"><span class="btn-title">Agende sua Consultoria</span><span class="btn-sub">Para agendarmos sua consultoria informe seus dados</span></span></span><span class="btn-arrow-circle"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+    </a>
+    <a href="#guia-milhas" class="custom-button" data-demo-link="guia">
+      <span class="btn-left"><span class="btn-icon-circle"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span class="btn-text-content"><span class="btn-title">Guia Inteligente de Milhas</span><span class="btn-sub">O universo das milhas no planejamento de luxo</span></span></span><span class="btn-arrow-circle"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+    </a>
+    <a href="#catalogo" class="custom-button">
+      <span class="btn-left"><span class="btn-icon-circle"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span><span class="btn-text-content"><span class="btn-title">Serviços e Portfólio</span><span class="btn-sub">Conheça nossos formatos de roteiros</span></span></span><span class="btn-arrow-circle"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+    </a>
+    <a href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20VIP%20da%20Ouzari." class="custom-button" target="_blank" rel="noopener noreferrer">
+      <span class="btn-left"><span class="btn-icon-circle"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span><span class="btn-text-content"><span class="btn-title">Grupo VIP da Ouzari</span><span class="btn-sub">Entre no WhatsApp e receba novidades em primeira mão</span></span></span><span class="btn-arrow-circle"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+    </a>
+  </nav>
+  <section id="catalogo">
+    <h2 class="section-header"><span>Catálogo Ouzari</span></h2>
+    <div class="catalog-grid">
+      <a class="catalog-card" href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20F%C3%A1tima!%20Quero%20saber%20sobre%20roteiros%20sob%20medida." target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" class="catalog-img" alt="Praia paradisíaca" loading="lazy"><div class="catalog-body"><span class="catalog-category">Experiência VIP</span><h3 class="catalog-title">Roteiros sob Medida</h3><p class="catalog-desc">Planejamento 100% personalizado para seu estilo.</p></div></a>
+      <a class="catalog-card" href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20F%C3%A1tima!%20Quero%20saber%20sobre%20roteiros%20rom%C3%A2nticos%20na%20Europa." target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600&auto=format&fit=crop" class="catalog-img" alt="Destino europeu à beira-mar" loading="lazy"><div class="catalog-body"><span class="catalog-category">Lua de Mel</span><h3 class="catalog-title">Europa &amp; Romance</h3><p class="catalog-desc">Hotéis boutique e experiências privativas.</p></div></a>
+      <a class="catalog-card" href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20F%C3%A1tima!%20Quero%20saber%20sobre%20resorts%20all-inclusive." target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&auto=format&fit=crop" class="catalog-img" alt="Arquitetura e hotelaria de luxo" loading="lazy"><div class="catalog-body"><span class="catalog-category">Exclusividade</span><h3 class="catalog-title">Resorts All-Inclusive</h3><p class="catalog-desc">Praias paradisíacas e vilas privadas.</p></div></a>
+      <a class="catalog-card" href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20F%C3%A1tima!%20Quero%20saber%20sobre%20expedi%C3%A7%C3%B5es%20ex%C3%B3ticas." target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=600&auto=format&fit=crop" class="catalog-img" alt="Vila colorida em destino italiano" loading="lazy"><div class="catalog-body"><span class="catalog-category">Aventura Premium</span><h3 class="catalog-title">Expedições Exóticas</h3><p class="catalog-desc">Safáris e destinos exóticos com total conforto.</p></div></a>
+    </div>
+  </section>
+  <section aria-labelledby="faq-title">
+    <h2 class="section-header" id="faq-title"><span>Dúvidas Frequentes</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Como funciona a consultoria personalizada?</span><i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i></button><div class="faq-answer">Analisamos seu perfil em uma conversa exclusiva para criar um itinerário alinhado às suas preferências, cuidando de passagens, hospedagem e experiências no destino.</div></div>
+      <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Quais são as opções de pagamento?</span><i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i></button><div class="faq-answer">Oferecemos parcelamento facilitado em cartão de crédito, boleto faturado e condições especiais para pagamentos via Pix ou transferência.</div></div>
+      <div class="faq-item"><button class="faq-question" aria-expanded="false"><span>Qual a antecedência ideal para planejar?</span><i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i></button><div class="faq-answer">De 3 a 6 meses para viagens nacionais e de 6 a 12 meses para roteiros internacionais ou épocas festivas e alta temporada.</div></div>
+    </div>
+  </section>
+  <section class="final-cta-card">
+    <div class="final-photo-wrapper"><img src="DSC_0410.jpg" alt="Fátima Guerra — Ouzari Viagens" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="final-cta-content">
+      <h2 class="final-cta-title">“Vamos juntos criar sua memória viajando?”</h2>
+      <a href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20F%C3%A1tima!%20Vamos%20juntos%20criar%20minha%20pr%C3%B3xima%20mem%C3%B3ria%20de%20viagem!" class="custom-button btn-gold-action" target="_blank" rel="noopener noreferrer">
+        <span class="btn-left"><span class="btn-icon-circle"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span><span class="btn-text-content"><span class="btn-title">Solicitar Roteiro Exclusivo</span><span class="btn-sub">Conversar diretamente com Fátima</span></span></span><span class="btn-arrow-circle"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+      </a>
+    </div>
+  </section>
+  <footer class="footer">Ouzari Viagens • Fátima Guerra • Todos os direitos reservados</footer>
+</main>
+<div id="guia-milhas" hidden></div>
+<script>
+window.addEventListener('load',()=>{window.setTimeout(()=>document.getElementById('preloader')?.classList.add('fade-out'),1100)});
+document.querySelectorAll('.faq-question').forEach(button=>button.addEventListener('click',()=>{
+  const item=button.closest('.faq-item');const open=item.classList.toggle('active');button.setAttribute('aria-expanded',String(open));
+}));
+document.querySelector('[data-demo-link="guia"]').addEventListener('click',event=>{
+  event.preventDefault();
+  alert('Prévia demonstrativa: o Guia Inteligente de Milhas ainda precisa receber o link ou arquivo definitivo. Este item está sinalizado para validação antes da publicação.');
+});
+</script>
+</body>
+</html>
